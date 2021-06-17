@@ -1,0 +1,12 @@
+/* 
+  FruitAppStrings.strings
+  Fruit App
+
+  Created by Calum Maclellan on 17/06/2021.
+  
+*/
+
+"fruitListTitle" = "Fruit";
+
+"currencyUnit" = "£";
+"weightUnit" = "Kg";
