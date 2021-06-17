@@ -21,7 +21,6 @@
 		015B854A267BAF5C00C2D080 /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8549267BAF5C00C2D080 /* FruitDetailViewModel.swift */; };
 		015B8552267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8551267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift */; };
 		015B856A267BBBF000C2D080 /* FruitAppStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 015B8569267BBBF000C2D080 /* FruitAppStrings.strings */; };
-		015B856F267BC9CA00C2D080 /* DetailsIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B856E267BC9CA00C2D080 /* DetailsIconImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		015B8549267BAF5C00C2D080 /* FruitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModel.swift; sourceTree = "<group>"; };
 		015B8551267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		015B8569267BBBF000C2D080 /* FruitAppStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FruitAppStrings.strings; sourceTree = "<group>"; };
-		015B856E267BC9CA00C2D080 /* DetailsIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsIconImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +156,6 @@
 			children = (
 				015B84E4267B872000C2D080 /* ContentView.swift */,
 				015B853F267BA77B00C2D080 /* FruitDetailView.swift */,
-				015B856E267BC9CA00C2D080 /* DetailsIconImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				015B8527267B94B300C2D080 /* Fruit.swift in Sources */,
-				015B856F267BC9CA00C2D080 /* DetailsIconImage.swift in Sources */,
 				015B853B267BA44800C2D080 /* FruitAppStrings.swift in Sources */,
 				015B8552267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift in Sources */,
 				015B84EF267B873600C2D080 /* Fruit_App.xcdatamodeld in Sources */,

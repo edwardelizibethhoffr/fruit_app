@@ -13,9 +13,9 @@ struct Fruit: Hashable {
     var price: Int
     var weight: Int
     
-    init(type: String) {
+    init(type: String, price: Int, weight: Int) {
         self.type = type
-        self.price = 100
-        self.weight = 100
+        self.price = price
+        self.weight = weight
     }
 }
