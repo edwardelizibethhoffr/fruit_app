@@ -10,11 +10,14 @@ import SwiftUI
 @main
 struct Fruit_AppApp: App {
     let persistenceController = PersistenceController.shared
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FruitListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+
 }

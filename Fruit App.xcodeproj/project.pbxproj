@@ -8,19 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		015B84E3267B872000C2D080 /* Fruit_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84E2267B872000C2D080 /* Fruit_AppApp.swift */; };
-		015B84E5267B872000C2D080 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84E4267B872000C2D080 /* ContentView.swift */; };
+		015B84E5267B872000C2D080 /* FruitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84E4267B872000C2D080 /* FruitListView.swift */; };
 		015B84E7267B873600C2D080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015B84E6267B873600C2D080 /* Assets.xcassets */; };
 		015B84EA267B873600C2D080 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015B84E9267B873600C2D080 /* Preview Assets.xcassets */; };
 		015B84EC267B873600C2D080 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84EB267B873600C2D080 /* Persistence.swift */; };
 		015B84EF267B873600C2D080 /* Fruit_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 015B84ED267B873600C2D080 /* Fruit_App.xcdatamodeld */; };
 		015B84FA267B873900C2D080 /* Fruit_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84F9267B873900C2D080 /* Fruit_AppTests.swift */; };
 		015B8505267B873900C2D080 /* Fruit_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8504267B873900C2D080 /* Fruit_AppUITests.swift */; };
-		015B8527267B94B300C2D080 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8526267B94B300C2D080 /* Fruit.swift */; };
+		015B8527267B94B300C2D080 /* FruitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8526267B94B300C2D080 /* FruitResponse.swift */; };
 		015B853B267BA44800C2D080 /* FruitAppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B853A267BA44800C2D080 /* FruitAppStrings.swift */; };
 		015B8540267BA77B00C2D080 /* FruitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B853F267BA77B00C2D080 /* FruitDetailView.swift */; };
 		015B854A267BAF5C00C2D080 /* FruitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8549267BAF5C00C2D080 /* FruitDetailViewModel.swift */; };
 		015B8552267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8551267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift */; };
 		015B856A267BBBF000C2D080 /* FruitAppStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 015B8569267BBBF000C2D080 /* FruitAppStrings.strings */; };
+		015B857B267CCF4C00C2D080 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B857A267CCF4C00C2D080 /* APIServiceProtocol.swift */; };
+		015B8583267CCF7700C2D080 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8582267CCF7700C2D080 /* APIService.swift */; };
+		015B8589267CD3AD00C2D080 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8588267CD3AD00C2D080 /* JSONParser.swift */; };
+		015B858E267CD43400C2D080 /* FruitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B858D267CD43400C2D080 /* FruitError.swift */; };
+		015B8593267CE1A500C2D080 /* FruitListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8592267CE1A500C2D080 /* FruitListViewModelProtocol.swift */; };
+		015B8598267CE1BD00C2D080 /* FruitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B8597267CE1BD00C2D080 /* FruitListViewModel.swift */; };
+		015B85A3267CF38300C2D080 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B85A2267CF38300C2D080 /* Fruit.swift */; };
+		015B85B6267D275400C2D080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B85B5267D275400C2D080 /* AppDelegate.swift */; };
+		015B85C1267D3AD800C2D080 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B85C0267D3AD700C2D080 /* RefreshableScrollView.swift */; };
+		015B85C6267D4EEE00C2D080 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B85C5267D4EEE00C2D080 /* RefreshControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +53,7 @@
 /* Begin PBXFileReference section */
 		015B84DF267B872000C2D080 /* Fruit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fruit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		015B84E2267B872000C2D080 /* Fruit_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_AppApp.swift; sourceTree = "<group>"; };
-		015B84E4267B872000C2D080 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		015B84E4267B872000C2D080 /* FruitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitListView.swift; sourceTree = "<group>"; };
 		015B84E6267B873600C2D080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		015B84E9267B873600C2D080 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		015B84EB267B873600C2D080 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -55,12 +65,22 @@
 		015B8500267B873900C2D080 /* Fruit AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fruit AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		015B8504267B873900C2D080 /* Fruit_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_AppUITests.swift; sourceTree = "<group>"; };
 		015B8506267B873A00C2D080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		015B8526267B94B300C2D080 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		015B8526267B94B300C2D080 /* FruitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitResponse.swift; sourceTree = "<group>"; };
 		015B853A267BA44800C2D080 /* FruitAppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitAppStrings.swift; sourceTree = "<group>"; };
 		015B853F267BA77B00C2D080 /* FruitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailView.swift; sourceTree = "<group>"; };
 		015B8549267BAF5C00C2D080 /* FruitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModel.swift; sourceTree = "<group>"; };
 		015B8551267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		015B8569267BBBF000C2D080 /* FruitAppStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = FruitAppStrings.strings; sourceTree = "<group>"; };
+		015B857A267CCF4C00C2D080 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
+		015B8582267CCF7700C2D080 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		015B8588267CD3AD00C2D080 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		015B858D267CD43400C2D080 /* FruitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitError.swift; sourceTree = "<group>"; };
+		015B8592267CE1A500C2D080 /* FruitListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitListViewModelProtocol.swift; sourceTree = "<group>"; };
+		015B8597267CE1BD00C2D080 /* FruitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitListViewModel.swift; sourceTree = "<group>"; };
+		015B85A2267CF38300C2D080 /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		015B85B5267D275400C2D080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		015B85C0267D3AD700C2D080 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
+		015B85C5267D4EEE00C2D080 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +131,7 @@
 		015B84E1267B872000C2D080 /* Fruit App */ = {
 			isa = PBXGroup;
 			children = (
+				015B8579267CCF2E00C2D080 /* APIService */,
 				015B8548267BAEB700C2D080 /* ViewModel */,
 				015B8531267BA24E00C2D080 /* Resources */,
 				015B8525267B948700C2D080 /* Model */,
@@ -121,6 +142,7 @@
 				015B84F0267B873600C2D080 /* Info.plist */,
 				015B84ED267B873600C2D080 /* Fruit_App.xcdatamodeld */,
 				015B84E8267B873600C2D080 /* Preview Content */,
+				015B85B5267D275400C2D080 /* AppDelegate.swift */,
 			);
 			path = "Fruit App";
 			sourceTree = "<group>";
@@ -154,8 +176,10 @@
 		015B8515267B87C000C2D080 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				015B84E4267B872000C2D080 /* ContentView.swift */,
+				015B84E4267B872000C2D080 /* FruitListView.swift */,
 				015B853F267BA77B00C2D080 /* FruitDetailView.swift */,
+				015B85C0267D3AD700C2D080 /* RefreshableScrollView.swift */,
+				015B85C5267D4EEE00C2D080 /* RefreshControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,7 +187,7 @@
 		015B8525267B948700C2D080 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				015B8526267B94B300C2D080 /* Fruit.swift */,
+				015B85A2267CF38300C2D080 /* Fruit.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +205,8 @@
 			children = (
 				015B8549267BAF5C00C2D080 /* FruitDetailViewModel.swift */,
 				015B8551267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift */,
+				015B8592267CE1A500C2D080 /* FruitListViewModelProtocol.swift */,
+				015B8597267CE1BD00C2D080 /* FruitListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,6 +218,18 @@
 				015B8569267BBBF000C2D080 /* FruitAppStrings.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		015B8579267CCF2E00C2D080 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				015B857A267CCF4C00C2D080 /* APIServiceProtocol.swift */,
+				015B8582267CCF7700C2D080 /* APIService.swift */,
+				015B8588267CD3AD00C2D080 /* JSONParser.swift */,
+				015B858D267CD43400C2D080 /* FruitError.swift */,
+				015B8526267B94B300C2D080 /* FruitResponse.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,14 +362,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015B8527267B94B300C2D080 /* Fruit.swift in Sources */,
+				015B85A3267CF38300C2D080 /* Fruit.swift in Sources */,
+				015B85B6267D275400C2D080 /* AppDelegate.swift in Sources */,
+				015B8527267B94B300C2D080 /* FruitResponse.swift in Sources */,
 				015B853B267BA44800C2D080 /* FruitAppStrings.swift in Sources */,
+				015B8589267CD3AD00C2D080 /* JSONParser.swift in Sources */,
+				015B85C6267D4EEE00C2D080 /* RefreshControl.swift in Sources */,
+				015B858E267CD43400C2D080 /* FruitError.swift in Sources */,
 				015B8552267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift in Sources */,
 				015B84EF267B873600C2D080 /* Fruit_App.xcdatamodeld in Sources */,
+				015B8583267CCF7700C2D080 /* APIService.swift in Sources */,
 				015B84EC267B873600C2D080 /* Persistence.swift in Sources */,
-				015B84E5267B872000C2D080 /* ContentView.swift in Sources */,
+				015B8593267CE1A500C2D080 /* FruitListViewModelProtocol.swift in Sources */,
+				015B84E5267B872000C2D080 /* FruitListView.swift in Sources */,
+				015B8598267CE1BD00C2D080 /* FruitListViewModel.swift in Sources */,
+				015B85C1267D3AD800C2D080 /* RefreshableScrollView.swift in Sources */,
 				015B84E3267B872000C2D080 /* Fruit_AppApp.swift in Sources */,
 				015B854A267BAF5C00C2D080 /* FruitDetailViewModel.swift in Sources */,
+				015B857B267CCF4C00C2D080 /* APIServiceProtocol.swift in Sources */,
 				015B8540267BA77B00C2D080 /* FruitDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

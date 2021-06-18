@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FruitDetailViewModel: FruitDetailViewModelProtocol {
+class FruitDetailViewModel: Identifiable, FruitDetailViewModelProtocol {
     
     private let fruit: Fruit
     
@@ -25,7 +25,7 @@ class FruitDetailViewModel: FruitDetailViewModelProtocol {
     }
     
     func getFormattedWeightString() -> String {
-        let weightAsString = roundToGivenDecimalPlaces(value: Double(fruit.weight) / 1000, decimalPlaces: 2)
+        let weightAsString = roundToGivenDecimalPlaces(value: Double(fruit.weight) / 1000, decimalPlaces: 3)
         return "\(weightAsString) \(FruitAppStrings.weightUnit.localised())"
     }
     
@@ -42,4 +42,13 @@ class FruitDetailViewModel: FruitDetailViewModelProtocol {
     
 }
 
+extension FruitDetailViewModel: Hashable {
+  static func == (lhs: FruitDetailViewModel, rhs: FruitDetailViewModel) -> Bool {
+    return lhs.getType() == rhs.getType()
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(self.getType())
+  }
+}
 

@@ -7,6 +7,8 @@
 */
 
 "fruitListTitle" = "Fruit";
+"fruitListNoResults" = "No fruit loaded";
+"fruitListRefresh" = "Refresh";
 
 "currencyUnit" = "£";
 "weightUnit" = "Kg";

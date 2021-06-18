@@ -8,8 +8,11 @@
 import Foundation
 
 enum FruitAppStrings: String {
-
+    
+    case fruitListNoResults = "fruitListNoResults"
     case fruitListTitle = "fruitListTitle"
+    case fruitListRefresh = "fruitListRefresh"
+    
     case currencyUnit = "currencyUnit"
     case weightUnit = "weightUnit"
     
@@ -17,7 +20,6 @@ enum FruitAppStrings: String {
         rawValue.localised()
     }
 }
-
 
 extension String {
     

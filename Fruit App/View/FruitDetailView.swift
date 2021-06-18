@@ -15,7 +15,7 @@ struct FruitDetailView: View {
 
     var body: some View {
         VStack {
-            Text(viewModel.getType())
+            Text(viewModel.getType().capitalized)
                 .font(.largeTitle)
                 .padding(.bottom, 100)
             VStack(alignment: .leading) {
