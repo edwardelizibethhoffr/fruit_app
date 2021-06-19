@@ -12,6 +12,10 @@ protocol APIServiceProtocol {
     
     func makeGetFruitRequest() -> AnyPublisher<FruitResponse, FruitError>
     
+}
+
+protocol APILoggingProtocol {
+    
     func makeUsageEventRequest(eventType: UsageEventType, data: String)
     
 }

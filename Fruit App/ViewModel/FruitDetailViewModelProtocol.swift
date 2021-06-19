@@ -13,4 +13,6 @@ protocol FruitDetailViewModelProtocol {
     func getFormattedPriceString() -> String
     
     func getFormattedWeightString() -> String
+    
+    func logNavigationEnded()
 }

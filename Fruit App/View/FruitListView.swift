@@ -7,35 +7,33 @@
 
 import SwiftUI
 import CoreData
+import Combine
 
 struct FruitListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @ObservedObject private var viewModel = FruitListViewModel(apiService: APIService())
     
-    private var isLoading = false
-    
     var body: some View {
-        
-        NavigationView {
-            List {
-                if viewModel.dataSource.isEmpty {
-                    noResultsSection
+        LoadingView(isShowing: $viewModel.isLoading) {
+            NavigationView {
+                List {
+                    if viewModel.dataSource.isEmpty {
+                        noResultsSection
+                    }
+                    else {
+                        ForEach(viewModel.dataSource, id: \.self, content: FruitRow.init(fruitVM:))
+                    }
                 }
-                else {
-                    ForEach(viewModel.dataSource, id: \.self, content: FruitRow.init(fruitVM:))
+                .navigationBarTitle(FruitAppStrings.fruitListTitle.localised())
+                .toolbar {
+                    Button(FruitAppStrings.fruitListRefresh.localised()) {
+                        viewModel.getFruit()
+                    }
                 }
             }
-            .navigationBarTitle(FruitAppStrings.fruitListTitle.localised())
-            .toolbar {
-                Button(FruitAppStrings.fruitListRefresh.localised()) {
-                    viewModel.getFruit()
-                }
-            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
-     
-        
     }
     
     var noResultsSection: some View {
@@ -49,20 +47,52 @@ struct FruitListView: View {
 
 struct FruitRow: View {
     
-    let fruitVM: FruitDetailViewModel
+    @ObservedObject var fruitVM: FruitDetailViewModel
 
+    @State private var selection: Int?
+
+        func selectionBinding() -> Binding<Int?> {
+            let binding = Binding<Int?>(get: {
+                self.selection
+            }, set: {
+                self.selection = $0
+                fruitVM.navigationLogger.navigationEventStarted()
+            })
+            return binding
+        }
+    
+    
     var body: some View {
         NavigationLink(destination:
-                    FruitDetailView(viewModel: fruitVM)) {
+                        NavigationLazyView (
+                            FruitDetailView(viewModel: fruitVM)),
+                       tag: 1,
+                       selection: selectionBinding()
+        ) {
             Text(fruitVM.getType().capitalized)
                 .font(.title)
                 .padding(12)
         }
+        
+        
+            //navigationLogger.navigationEventStarted()
+        
     }
 }
 
 struct FruitListView_Previews: PreviewProvider {
     static var previews: some View {
         FruitListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}
+
+
+struct NavigationLazyView<Content: View>: View {
+    let build: () -> Content
+    init(_ build: @autoclosure @escaping () -> Content) {
+        self.build = build
+    }
+    var body: Content {
+        build()
     }
 }

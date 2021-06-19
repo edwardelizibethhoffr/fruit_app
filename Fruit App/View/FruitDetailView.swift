@@ -12,7 +12,7 @@ struct FruitDetailView: View {
     //let fruit: Fruit
     
     let viewModel: FruitDetailViewModelProtocol
-
+    
     var body: some View {
         VStack {
             Text(viewModel.getType().capitalized)
@@ -52,9 +52,12 @@ struct FruitDetailView: View {
             .fixedSize(horizontal: true, vertical: false)
             
         }
-        
         .navigationBarTitle(Text(viewModel.getType()), displayMode: .inline)
+        .onAppear {
+            viewModel.logNavigationEnded()
+        }
     }
+    
 }
 
 struct FruitDetailView_Previews: PreviewProvider {

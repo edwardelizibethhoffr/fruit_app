@@ -7,12 +7,14 @@
 
 import Foundation
 
-class FruitDetailViewModel: Identifiable, FruitDetailViewModelProtocol {
+class FruitDetailViewModel: Identifiable, ObservableObject, FruitDetailViewModelProtocol {
     
     private let fruit: Fruit
+    var navigationLogger: NavigationLoggerProtocol
     
-    init(fruit: Fruit) {
+    init(fruit: Fruit ) {
         self.fruit = fruit
+        self.navigationLogger = NavigationLogger()
     }
     
     func getType() -> String {
@@ -40,6 +42,10 @@ class FruitDetailViewModel: Identifiable, FruitDetailViewModelProtocol {
         return formattedNumberAsString
     }
     
+    func logNavigationEnded() {
+        navigationLogger.navigationEventEnded()
+    }
+    
 }
 
 extension FruitDetailViewModel: Hashable {
@@ -51,4 +57,5 @@ extension FruitDetailViewModel: Hashable {
     hasher.combine(self.getType())
   }
 }
+
 

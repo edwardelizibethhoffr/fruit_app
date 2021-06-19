@@ -14,6 +14,14 @@ class FruitListViewModel: ObservableObject, Identifiable, FruitListViewModelProt
     
     @Published var dataSource: [FruitDetailViewModel] = []
     
+    let willChange = PassthroughSubject<Void, Never>()
+    
+    @Published var isLoading: Bool = false /*{
+        didSet {
+            willChange.send()
+        }
+    }*/
+    
     private var disposables = Set<AnyCancellable>()
     
     init(apiService: APIServiceProtocol, scheduler: DispatchQueue = DispatchQueue(label: "FruitListViewModel")) {
@@ -22,6 +30,7 @@ class FruitListViewModel: ObservableObject, Identifiable, FruitListViewModelProt
     }
 
     func getFruit() {
+        isLoading = true
         apiService.makeGetFruitRequest()
             .map { response in
                 response.fruit.map(FruitDetailViewModel.init)
@@ -30,6 +39,7 @@ class FruitListViewModel: ObservableObject, Identifiable, FruitListViewModelProt
             .sink(
                 receiveCompletion: {
                     [weak self] value in
+                    self?.isLoading = false
                     guard let self = self else { return }
                     switch value {
                     case .failure(let error):
@@ -48,6 +58,6 @@ class FruitListViewModel: ObservableObject, Identifiable, FruitListViewModelProt
     }
     
     private func logError(message: String) {
-        apiService.makeUsageEventRequest(eventType: .error, data: message)
+        Logger.makeLoggingRequest(eventType: .error, data: message)
     }
 }

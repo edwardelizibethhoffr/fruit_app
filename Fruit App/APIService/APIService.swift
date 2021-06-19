@@ -65,13 +65,17 @@ extension APIService: APIServiceProtocol {
             .eraseToAnyPublisher()
     }
     
+}
+
+extension APIService: APILoggingProtocol {
+    
     func makeUsageEventRequest(eventType: UsageEventType, data: String) {
         guard let url = getStatsRequestURLComponents(eventType: eventType, data: data).url else {
             let error = FruitError.network(description: "Couldn't create the URL")
             print(error.localizedDescription)
             return
         }
-        session.dataTask(with: URLRequest(url: url))
+        self.session.dataTask(with: URLRequest(url: url)).resume()
     }
 }
 
