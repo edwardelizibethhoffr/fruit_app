@@ -49,7 +49,6 @@ class FruitListViewModel: NavigationLoggingObject, ObservableObject, FruitListVi
                 receiveValue: {
                     [weak self] fruitList in
                     guard let self = self else { return }
-                    print("Got valur fruitList in \(fruitList)")
                     self.dataSource = fruitList
                 })
             .store(in: &disposables)

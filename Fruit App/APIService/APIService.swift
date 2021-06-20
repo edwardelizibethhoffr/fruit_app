@@ -71,7 +71,6 @@ class APIService: NSObject, URLSessionTaskDelegate {
 extension APIService: APIServiceProtocol {
     
     func makeGetFruitRequest() -> AnyPublisher<FruitResponse, FruitError>{
-        print("makeGetFruitRequest called")
         guard let url = getFruitDataRequestURLComponents().url else {
             let error = FruitError.network(description: "Couldn't create the URL")
             return Fail(error: error).eraseToAnyPublisher()
