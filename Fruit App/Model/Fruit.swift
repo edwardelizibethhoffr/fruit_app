@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Fruit: Decodable {
+struct Fruit: Decodable, Encodable {
     var type: String
     var price: Int
     var weight: Int

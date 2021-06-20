@@ -13,7 +13,13 @@ class NavigationLogger: NavigationLoggerProtocol {
     
     static var instance = NavigationLogger()
     
+    private static var logger: LoggerProtocol = Logger()
+    
     private init() {
+    }
+    
+    func setLogger(_ logger: LoggerProtocol) {
+        NavigationLogger.logger = logger
     }
     
     static func navigationEventStarted(id: ObjectIdentifier) {
@@ -26,7 +32,7 @@ class NavigationLogger: NavigationLoggerProtocol {
         }
         let timeTaken = Int( Date().timeIntervalSince(initTime) * 1000)
         print("Time taken \(timeTaken)")
-        Logger.makeLoggingRequest(eventType: .display, data: "\(timeTaken)")
+        logger.makeLoggingRequest(eventType: .display, data: "\(timeTaken)")
     }
     
 }

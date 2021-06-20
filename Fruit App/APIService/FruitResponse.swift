@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FruitResponse: Decodable {
+struct FruitResponse: Decodable, Encodable {
     let fruit: [Fruit]
     
 }

@@ -14,5 +14,4 @@ protocol FruitDetailViewModelProtocol: NavigationLoggingObjectProtocol {
     
     func getFormattedWeightString() -> String
     
-    func logNavigationEnded()
 }

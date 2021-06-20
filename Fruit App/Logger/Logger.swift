@@ -7,11 +7,19 @@
 
 import Foundation
 
-struct Logger {
+struct Logger: LoggerProtocol {
     
-    private static let apiLogger: APILoggingProtocol = APIService()
+    private let apiLogger: APILoggingProtocol
     
-    static func makeLoggingRequest(eventType: UsageEventType, data: String) {
+    init(_ apiLogger: APILoggingProtocol = APIService()) {
+        self.apiLogger = apiLogger
+    }
+    
+    func makeLoggingRequest(eventType: UsageEventType, data: String) {
         apiLogger.makeUsageEventRequest(eventType: eventType, data: data)
     }
+}
+
+protocol LoggerProtocol {
+    func makeLoggingRequest(eventType: UsageEventType, data: String) 
 }

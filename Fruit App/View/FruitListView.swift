@@ -12,11 +12,11 @@ import Combine
 struct FruitListView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @ObservedObject private var viewModel = FruitListViewModel(apiService: APIService())
+    @ObservedObject private var viewModel = FruitListViewModel(apiService: APIService(), logger: Logger())
     
     var body: some View {
         LoadingView(isShowing: $viewModel.isLoading) {
-            NavigationView {
+           NavigationView {
                 List {
                     if viewModel.dataSource.isEmpty {
                         noResultsSection
@@ -30,7 +30,6 @@ struct FruitListView: View {
                         })
                     }
                 }
-                .navigationBarTitle(FruitAppStrings.fruitListTitle.localised())
                 .toolbar {
                     Button(FruitAppStrings.fruitListRefresh.localised()) {
                         viewModel.getFruit()
@@ -39,11 +38,11 @@ struct FruitListView: View {
                 .onAppear {
                     viewModel.logNavigationEnded()
                 }
+                .navigationBarTitle(FruitAppStrings.fruitListTitle.localised())
+                EmptyDetailView()
             }
-            .navigationViewStyle(StackNavigationViewStyle())
-        }
+       }
     }
-
     
     var noResultsSection: some View {
        Section {
@@ -52,6 +51,16 @@ struct FruitListView: View {
             .padding(12)
        }
      }
+}
+
+struct EmptyDetailView: View {
+    var body: some View {
+        VStack {
+            Text("Welcome to the Fruit app!")
+                .font(.largeTitle)
+                .padding(.bottom, 100)
+        }
+    }
 }
 
 struct FruitRow: View {

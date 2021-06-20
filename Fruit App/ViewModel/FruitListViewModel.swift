@@ -17,9 +17,11 @@ class FruitListViewModel: NavigationLoggingObject, ObservableObject, FruitListVi
     @Published var isLoading: Bool = false
     
     private var disposables = Set<AnyCancellable>()
+    private let logger: LoggerProtocol
     
-    init(apiService: APIServiceProtocol, scheduler: DispatchQueue = DispatchQueue(label: "FruitListViewModel")) {
+    init(apiService: APIServiceProtocol, logger: LoggerProtocol) {
         self.apiService = apiService
+        self.logger = logger
         super.init()
         getFruit()
     }
@@ -47,12 +49,13 @@ class FruitListViewModel: NavigationLoggingObject, ObservableObject, FruitListVi
                 receiveValue: {
                     [weak self] fruitList in
                     guard let self = self else { return }
+                    print("Got valur fruitList in \(fruitList)")
                     self.dataSource = fruitList
                 })
             .store(in: &disposables)
     }
     
     private func logError(message: String) {
-        Logger.makeLoggingRequest(eventType: .error, data: message)
+        logger.makeLoggingRequest(eventType: UsageEventType.error, data: message)
     }
 }

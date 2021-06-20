@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012A00DE267FA5CF002E7C68 /* FruitListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A00DD267FA5CF002E7C68 /* FruitListViewModelTests.swift */; };
+		012A00E7267FA8B5002E7C68 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A00E6267FA8B5002E7C68 /* MockAPIService.swift */; };
+		012A00FB267FB6B9002E7C68 /* MockLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A00FA267FB6B9002E7C68 /* MockLogger.swift */; };
+		012A0100267FE902002E7C68 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A00FF267FE902002E7C68 /* APIServiceTests.swift */; };
+		012A0105267FEA52002E7C68 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A0104267FEA52002E7C68 /* MockURLSession.swift */; };
+		012A010A267FEAC6002E7C68 /* MockURLSessionTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A0109267FEAC6002E7C68 /* MockURLSessionTask.swift */; };
+		012A010F267FEB4D002E7C68 /* MockHTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A010E267FEB4D002E7C68 /* MockHTTPURLResponse.swift */; };
+		012A0114267FEEF5002E7C68 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A0113267FEEF5002E7C68 /* MockURLProtocol.swift */; };
+		012A0119267FF800002E7C68 /* NavigationLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A0118267FF800002E7C68 /* NavigationLoggerTests.swift */; };
+		012A011E267FFBCC002E7C68 /* MockAPILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A011D267FFBCC002E7C68 /* MockAPILogger.swift */; };
+		012A0123267FFC25002E7C68 /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A0122267FFC25002E7C68 /* LoggerTests.swift */; };
+		012A012B267FFDC0002E7C68 /* FruitDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012A012A267FFDC0002E7C68 /* FruitDetailViewModelTests.swift */; };
 		015B84E3267B872000C2D080 /* Fruit_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84E2267B872000C2D080 /* Fruit_AppApp.swift */; };
 		015B84E5267B872000C2D080 /* FruitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015B84E4267B872000C2D080 /* FruitListView.swift */; };
 		015B84E7267B873600C2D080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 015B84E6267B873600C2D080 /* Assets.xcassets */; };
@@ -55,6 +67,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012A00DD267FA5CF002E7C68 /* FruitListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitListViewModelTests.swift; sourceTree = "<group>"; };
+		012A00E6267FA8B5002E7C68 /* MockAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIService.swift; sourceTree = "<group>"; };
+		012A00FA267FB6B9002E7C68 /* MockLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLogger.swift; sourceTree = "<group>"; };
+		012A00FF267FE902002E7C68 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		012A0104267FEA52002E7C68 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		012A0109267FEAC6002E7C68 /* MockURLSessionTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionTask.swift; sourceTree = "<group>"; };
+		012A010E267FEB4D002E7C68 /* MockHTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHTTPURLResponse.swift; sourceTree = "<group>"; };
+		012A0113267FEEF5002E7C68 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		012A0118267FF800002E7C68 /* NavigationLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLoggerTests.swift; sourceTree = "<group>"; };
+		012A011D267FFBCC002E7C68 /* MockAPILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPILogger.swift; sourceTree = "<group>"; };
+		012A0122267FFC25002E7C68 /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		012A012A267FFDC0002E7C68 /* FruitDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewModelTests.swift; sourceTree = "<group>"; };
 		015B84DF267B872000C2D080 /* Fruit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fruit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		015B84E2267B872000C2D080 /* Fruit_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit_AppApp.swift; sourceTree = "<group>"; };
 		015B84E4267B872000C2D080 /* FruitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitListView.swift; sourceTree = "<group>"; };
@@ -116,6 +140,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012A00E2267FA8A3002E7C68 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				012A00E6267FA8B5002E7C68 /* MockAPIService.swift */,
+				012A00FA267FB6B9002E7C68 /* MockLogger.swift */,
+				012A0104267FEA52002E7C68 /* MockURLSession.swift */,
+				012A0109267FEAC6002E7C68 /* MockURLSessionTask.swift */,
+				012A010E267FEB4D002E7C68 /* MockHTTPURLResponse.swift */,
+				012A0113267FEEF5002E7C68 /* MockURLProtocol.swift */,
+				012A011D267FFBCC002E7C68 /* MockAPILogger.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		015B84D6267B872000C2D080 = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +205,14 @@
 		015B84F8267B873900C2D080 /* Fruit AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				012A00E2267FA8A3002E7C68 /* Mocks */,
 				015B84F9267B873900C2D080 /* Fruit_AppTests.swift */,
 				015B84FB267B873900C2D080 /* Info.plist */,
+				012A00DD267FA5CF002E7C68 /* FruitListViewModelTests.swift */,
+				012A00FF267FE902002E7C68 /* APIServiceTests.swift */,
+				012A0118267FF800002E7C68 /* NavigationLoggerTests.swift */,
+				012A0122267FFC25002E7C68 /* LoggerTests.swift */,
+				012A012A267FFDC0002E7C68 /* FruitDetailViewModelTests.swift */,
 			);
 			path = "Fruit AppTests";
 			sourceTree = "<group>";
@@ -428,7 +472,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012A010F267FEB4D002E7C68 /* MockHTTPURLResponse.swift in Sources */,
+				012A0105267FEA52002E7C68 /* MockURLSession.swift in Sources */,
+				012A00E7267FA8B5002E7C68 /* MockAPIService.swift in Sources */,
+				012A0114267FEEF5002E7C68 /* MockURLProtocol.swift in Sources */,
+				012A012B267FFDC0002E7C68 /* FruitDetailViewModelTests.swift in Sources */,
+				012A010A267FEAC6002E7C68 /* MockURLSessionTask.swift in Sources */,
+				012A00FB267FB6B9002E7C68 /* MockLogger.swift in Sources */,
 				015B84FA267B873900C2D080 /* Fruit_AppTests.swift in Sources */,
+				012A00DE267FA5CF002E7C68 /* FruitListViewModelTests.swift in Sources */,
+				012A0123267FFC25002E7C68 /* LoggerTests.swift in Sources */,
+				012A011E267FFBCC002E7C68 /* MockAPILogger.swift in Sources */,
+				012A0100267FE902002E7C68 /* APIServiceTests.swift in Sources */,
+				012A0119267FF800002E7C68 /* NavigationLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fruit App/Preview Content\"";
 				DEVELOPMENT_TEAM = 7L847DX3TS;
@@ -589,6 +646,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.calumco.Fruit-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -599,6 +657,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Fruit App/Preview Content\"";
 				DEVELOPMENT_TEAM = 7L847DX3TS;
@@ -611,6 +670,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.calumco.Fruit-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

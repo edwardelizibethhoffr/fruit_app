@@ -54,17 +54,21 @@ struct FruitDetailView: View {
             .fixedSize(horizontal: true, vertical: false)
             
         }
-        .navigationBarTitle(Text(viewModel.getType()), displayMode: .inline)
+        .navigationBarTitle(Text(viewModel.getType().capitalized), displayMode: .inline)
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: Button(action : {
-            self.logBackNavigation?()
-            self.mode.wrappedValue.dismiss()
-                }){
-                    Text("Back")
-                })
         .onAppear {
             viewModel.logNavigationEnded()
         }
+        .navigationBarItems(leading: UIDevice.current.userInterfaceIdiom != .pad ? AnyView(self.customBackButton) : AnyView(EmptyView()))
+        }
+    
+    var customBackButton: some View {
+        Button(action : {
+                self.logBackNavigation?()
+                self.mode.wrappedValue.dismiss()
+                    }){
+                        Text("Back")
+            }
     }
     
 }

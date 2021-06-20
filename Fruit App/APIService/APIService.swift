@@ -10,15 +10,36 @@ import Combine
 
 class APIService: NSObject, URLSessionTaskDelegate {
     
-    private var session: URLSession
+    private var session: URLSession!
     
-    init(session: URLSession = .shared) {
-        self.session = session
+    init(_ session: URLSession? = nil) {
+        super.init()
+        if let session = session {
+            self.session = session
+        }
+        else {
+            self.session = URLSession(configuration: URLSessionConfiguration.default,
+                                  delegate: self,
+                                  delegateQueue: nil)
+        }
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error {
             print(error.localizedDescription)
+            makeUsageEventRequest(eventType: .error, data: error.localizedDescription)
+        }
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
+        for metric in metrics.transactionMetrics {
+            if let startDate = metric.fetchStartDate, let endDate = metric.responseEndDate {
+                let timeTaken = Int( endDate.timeIntervalSince(startDate) * 1000)
+                print("Request took \(timeTaken)")
+                if let url = task.response?.url, !url.absoluteString.contains("/stats") {
+                    makeUsageEventRequest(eventType: .load, data: "\(timeTaken)")
+                }
+            }
         }
     }
     
@@ -50,6 +71,7 @@ class APIService: NSObject, URLSessionTaskDelegate {
 extension APIService: APIServiceProtocol {
     
     func makeGetFruitRequest() -> AnyPublisher<FruitResponse, FruitError>{
+        print("makeGetFruitRequest called")
         guard let url = getFruitDataRequestURLComponents().url else {
             let error = FruitError.network(description: "Couldn't create the URL")
             return Fail(error: error).eraseToAnyPublisher()
