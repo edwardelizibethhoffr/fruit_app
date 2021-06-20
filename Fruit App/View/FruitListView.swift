@@ -22,7 +22,12 @@ struct FruitListView: View {
                         noResultsSection
                     }
                     else {
-                        ForEach(viewModel.dataSource, id: \.self, content: FruitRow.init(fruitVM:))
+                        ForEach(viewModel.dataSource, id: \.self, content: {
+                            vm in
+                            return FruitRow(fruitVM: vm, logBackNavigation: {
+                                self.viewModel.logNavigationStarted()
+                            })
+                        })
                     }
                 }
                 .navigationBarTitle(FruitAppStrings.fruitListTitle.localised())
@@ -31,10 +36,14 @@ struct FruitListView: View {
                         viewModel.getFruit()
                     }
                 }
+                .onAppear {
+                    viewModel.logNavigationEnded()
+                }
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
+
     
     var noResultsSection: some View {
        Section {
@@ -50,22 +59,25 @@ struct FruitRow: View {
     @ObservedObject var fruitVM: FruitDetailViewModel
 
     @State private var selection: Int?
-
-        func selectionBinding() -> Binding<Int?> {
-            let binding = Binding<Int?>(get: {
-                self.selection
-            }, set: {
-                self.selection = $0
-                fruitVM.navigationLogger.navigationEventStarted()
-            })
-            return binding
-        }
     
+    var logBackNavigation: (() -> Void)?
+    
+    func selectionBinding() -> Binding<Int?> {
+        let binding = Binding<Int?>(get: {
+            self.selection
+        }, set: {
+            self.selection = $0
+            fruitVM.logNavigationStarted()
+        })
+        return binding
+    }
     
     var body: some View {
         NavigationLink(destination:
                         NavigationLazyView (
-                            FruitDetailView(viewModel: fruitVM)),
+                            FruitDetailView(viewModel: fruitVM, logBackNavigation: {
+                                self.logBackNavigation?()
+                            })),
                        tag: 1,
                        selection: selectionBinding()
         ) {
@@ -73,10 +85,6 @@ struct FruitRow: View {
                 .font(.title)
                 .padding(12)
         }
-        
-        
-            //navigationLogger.navigationEventStarted()
-        
     }
 }
 

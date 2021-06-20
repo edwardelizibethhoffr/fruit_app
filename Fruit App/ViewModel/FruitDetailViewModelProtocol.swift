@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FruitDetailViewModelProtocol {
+protocol FruitDetailViewModelProtocol: NavigationLoggingObjectProtocol {
     func getType() -> String
     
     func getFormattedPriceString() -> String

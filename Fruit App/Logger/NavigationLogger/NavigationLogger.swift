@@ -8,20 +8,24 @@
 import Foundation
 
 class NavigationLogger: NavigationLoggerProtocol {
+
+    private static var idsAndStartTimes: [ObjectIdentifier: Date] = [:]
     
-    private var timeStarted: Date?
+    static var instance = NavigationLogger()
     
-    func navigationEventStarted() {
-        timeStarted = Date()
+    private init() {
     }
     
-    func navigationEventEnded() {
-        guard let initTime = timeStarted else {
+    static func navigationEventStarted(id: ObjectIdentifier) {
+        idsAndStartTimes[id] = Date()
+    }
+    
+    static func navigationEventEnded(id: ObjectIdentifier) {
+        guard let initTime = idsAndStartTimes.removeValue(forKey: id) else {
             return
         }
         let timeTaken = Int( Date().timeIntervalSince(initTime) * 1000)
         print("Time taken \(timeTaken)")
-        timeStarted = nil
         Logger.makeLoggingRequest(eventType: .display, data: "\(timeTaken)")
     }
     

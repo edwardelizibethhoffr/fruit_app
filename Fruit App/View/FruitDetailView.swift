@@ -9,9 +9,11 @@ import SwiftUI
 
 struct FruitDetailView: View {
         
-    //let fruit: Fruit
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     let viewModel: FruitDetailViewModelProtocol
+    
+    var logBackNavigation: (() -> Void)?
     
     var body: some View {
         VStack {
@@ -53,6 +55,13 @@ struct FruitDetailView: View {
             
         }
         .navigationBarTitle(Text(viewModel.getType()), displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            self.logBackNavigation?()
+            self.mode.wrappedValue.dismiss()
+                }){
+                    Text("Back")
+                })
         .onAppear {
             viewModel.logNavigationEnded()
         }

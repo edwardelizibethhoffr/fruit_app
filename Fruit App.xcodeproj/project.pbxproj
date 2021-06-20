@@ -34,6 +34,7 @@
 		0190F172267DF5CF00D91DF4 /* NavigationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190F171267DF5CF00D91DF4 /* NavigationLogger.swift */; };
 		0190F17B267DF5F600D91DF4 /* NavigationLoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190F17A267DF5F600D91DF4 /* NavigationLoggerProtocol.swift */; };
 		0190F181267E047600D91DF4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190F180267E047600D91DF4 /* Logger.swift */; };
+		0190F189267F61E800D91DF4 /* NavigationLoggingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190F188267F61E800D91DF4 /* NavigationLoggingObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		0190F171267DF5CF00D91DF4 /* NavigationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLogger.swift; sourceTree = "<group>"; };
 		0190F17A267DF5F600D91DF4 /* NavigationLoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLoggerProtocol.swift; sourceTree = "<group>"; };
 		0190F180267E047600D91DF4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0190F188267F61E800D91DF4 /* NavigationLoggingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLoggingObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +211,6 @@
 		015B8548267BAEB700C2D080 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				0190F176267DF5DB00D91DF4 /* NavigationLogger */,
 				015B8549267BAF5C00C2D080 /* FruitDetailViewModel.swift */,
 				015B8551267BAFCE00C2D080 /* FruitDetailViewModelProtocol.swift */,
 				015B8592267CE1A500C2D080 /* FruitListViewModelProtocol.swift */,
@@ -260,7 +261,9 @@
 		0190F17F267E046300D91DF4 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
+				0190F176267DF5DB00D91DF4 /* NavigationLogger */,
 				0190F180267E047600D91DF4 /* Logger.swift */,
+				0190F188267F61E800D91DF4 /* NavigationLoggingObject.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				015B85B6267D275400C2D080 /* AppDelegate.swift in Sources */,
 				015B85DF267DE4F200C2D080 /* ActivityIndicator.swift in Sources */,
 				0190F17B267DF5F600D91DF4 /* NavigationLoggerProtocol.swift in Sources */,
+				0190F189267F61E800D91DF4 /* NavigationLoggingObject.swift in Sources */,
 				015B8527267B94B300C2D080 /* FruitResponse.swift in Sources */,
 				015B853B267BA44800C2D080 /* FruitAppStrings.swift in Sources */,
 				015B8589267CD3AD00C2D080 /* JSONParser.swift in Sources */,

@@ -8,24 +8,19 @@
 import Foundation
 import Combine
 
-class FruitListViewModel: ObservableObject, Identifiable, FruitListViewModelProtocol {
+class FruitListViewModel: NavigationLoggingObject, ObservableObject, FruitListViewModelProtocol {
     
     private let apiService: APIServiceProtocol
     
     @Published var dataSource: [FruitDetailViewModel] = []
     
-    let willChange = PassthroughSubject<Void, Never>()
-    
-    @Published var isLoading: Bool = false /*{
-        didSet {
-            willChange.send()
-        }
-    }*/
+    @Published var isLoading: Bool = false
     
     private var disposables = Set<AnyCancellable>()
     
     init(apiService: APIServiceProtocol, scheduler: DispatchQueue = DispatchQueue(label: "FruitListViewModel")) {
         self.apiService = apiService
+        super.init()
         getFruit()
     }
 

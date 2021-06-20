@@ -9,8 +9,8 @@ import Foundation
 
 protocol NavigationLoggerProtocol {
     
-    func navigationEventStarted()
+    static func navigationEventStarted(id: ObjectIdentifier)
     
-    func navigationEventEnded()
+    static func navigationEventEnded(id: ObjectIdentifier)
     
 }
