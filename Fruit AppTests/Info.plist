@@ -16,6 +16,13 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageRespectsSafeAreaInsets</key>
+		<false/>
+		<key>UIImageName</key>
+		<string>FruitIcon</string>
+	</dict>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>

@@ -31,26 +31,6 @@ class APIServiceTests: XCTestCase {
     }
     
     
-    func testMakeGetFruitRequestMakesRequest() {
-        let sampleData = FruitResponse(fruit: [Fruit(type: "test", price: 1, weight: 1)])
-        let mockData = try! JSONEncoder().encode(sampleData)
-        let expectation = XCTestExpectation(description: "response")
-        
-        MockURLProtocol.requestHandler = { request in
-            return (HTTPURLResponse(), mockData)
-        }
-        
-        apiService.makeGetFruitRequest()
-        .receive(on: DispatchQueue.main)
-        .sink(receiveCompletion: {_ in}, receiveValue: {
-            response in
-            expectation.fulfill()
-        })
-        
-        wait(for: [expectation], timeout: 1)
-       
-    }
-    
     func testMakeUsageEventRequestMakesRequest() {
         apiService = APIService(mockSession)
         let initDataTaskCounter = mockSession.dataTaskWithRequestCallCounter
